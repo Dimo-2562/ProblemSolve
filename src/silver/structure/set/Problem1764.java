@@ -1,4 +1,4 @@
-package silver.structure;
+package silver.structure.set;
 
 import java.util.*;
 import java.io.*;

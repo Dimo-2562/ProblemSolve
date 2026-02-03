@@ -1,4 +1,4 @@
-package silver.tree;
+package silver.structure.tree;
 
 import java.io.*;
 import java.util.*;
