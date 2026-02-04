@@ -1,3 +1,5 @@
+package silver.structure;
+
 import java.util.*;
 import java.io.*;
 
