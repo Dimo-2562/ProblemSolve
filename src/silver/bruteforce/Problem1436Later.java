@@ -1,4 +1,4 @@
-package later;
+package silver.bruteforce;
 
 import java.io.*;
 
