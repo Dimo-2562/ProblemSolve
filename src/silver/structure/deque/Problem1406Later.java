@@ -1,4 +1,4 @@
-package later;
+package silver.structure.deque;
 
 import java.io.*;
 import java.util.*;
