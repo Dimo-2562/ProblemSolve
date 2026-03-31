@@ -1,4 +1,4 @@
-package later;
+package gold.sweeping;
 
 import java.io.*;
 import java.util.*;
