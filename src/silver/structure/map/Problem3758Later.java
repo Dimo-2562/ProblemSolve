@@ -1,4 +1,4 @@
-package later;
+package silver.structure.map;
 
 import java.io.*;
 import java.util.*;
@@ -87,31 +87,32 @@ public class Problem3758Later {
 
         System.out.println(sb);
     }
-}
 
-/*
-Map <팀, 문제 정보>
--> 문제 정보
-- 각 문제별 최고점
-- 제출한 풀이의 수
-- 마지막 문제 풀이 순서
- */
-class Team {
-    int[] maxScore;
-    int submitCnt = 0;
-    int lastTime = 0;
 
-    int rank;
+    /*
+    Map <팀, 문제 정보>
+    -> 문제 정보
+    - 각 문제별 최고점
+    - 제출한 풀이의 수
+    - 마지막 문제 풀이 순서
+     */
+    static class Team {
+        int[] maxScore;
+        int submitCnt = 0;
+        int lastTime = 0;
 
-    public Team(int problemNum) {
-        this.maxScore = new int[problemNum+1];
-    }
+        int rank;
 
-    public int sum() {
-        int sum = 0;
-        for (int i = 0; i < maxScore.length; i++) {
-            sum += maxScore[i];
+        public Team(int problemNum) {
+            this.maxScore = new int[problemNum+1];
         }
-        return sum;
+
+        public int sum() {
+            int sum = 0;
+            for (int i = 0; i < maxScore.length; i++) {
+                sum += maxScore[i];
+            }
+            return sum;
+        }
     }
 }
