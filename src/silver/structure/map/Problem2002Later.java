@@ -1,4 +1,4 @@
-package later;
+package silver.structure.map;
 
 import java.io.*;
 import java.util.*;
