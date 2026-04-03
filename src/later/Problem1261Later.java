@@ -1,0 +1,79 @@
+package later;
+
+import java.io.*;
+import java.util.*;
+
+/*
+미로는 N*M
+빈 방 or 벽
+벽은 부술 수 있음.
+(1,1)에서 시작 -> (N, M)
+
+<입력>
+M, N
+- M: 가로 크기 (1 ~ 10^2)
+- N: 세로 크기 (1 ~ 10^2)
+미로의 상태 (N개의 줄)
+- 0: 빈 방
+- 1: 벽
+
+<출력>
+(N,M)으로 이동하기 위해 부숴야하는 벽의 개수
+
+BFS
+벽 부순 횟수를 들고 다니도록 -> 다익스트라
+ */
+
+public class Problem1261Later {
+    static int[] dy = {1, -1, 0, 0};
+    static int[] dx = {0, 0, 1, -1};
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int m = Integer.parseInt(st.nextToken());
+        int n = Integer.parseInt(st.nextToken());
+
+        int[][] map = new int[n + 1][m + 1];
+        for (int i = 1; i <= n; i++) {
+            String input = br.readLine();
+            for (int j = 1; j <= m; j++) {
+                map[i][j] = input.charAt(j - 1) - '0';
+            }
+        }
+
+        int[][] dist = new int[n + 1][m + 1];
+        for (int i = 1; i <= n; i++)
+            for (int j = 1; j <= m; j++) dist[i][j] = Integer.MAX_VALUE;
+
+        dist[1][1] = 0;
+
+        PriorityQueue<int[]> pq = new PriorityQueue<>((o1, o2) -> Integer.compare(o1[2], o2[2]));
+        pq.add(new int[]{1, 1, 0});
+
+        while (!pq.isEmpty()) {
+            int[] cur = pq.poll();
+            int y = cur[0];
+            int x = cur[1];
+            int cost = cur[2];
+
+            if (cost > dist[y][x]) continue;
+
+            for (int k = 0; k < 4; k++) {
+                int ny = y + dy[k];
+                int nx = x + dx[k];
+
+                if (ny < 1 || ny > n || nx < 1 || nx > m) continue;
+
+                int nCost = cost + map[ny][nx];
+                if (nCost < dist[ny][nx]) {
+                    dist[ny][nx] = nCost;
+                    pq.add(new int[] {ny, nx, dist[ny][nx]});
+                }
+            }
+        }
+
+        System.out.print(dist[n][m]);
+    }
+}
