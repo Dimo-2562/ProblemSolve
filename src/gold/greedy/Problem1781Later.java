@@ -1,4 +1,4 @@
-package later;
+package gold.greedy;
 
 import java.io.*;
 import java.util.*;
