@@ -1,4 +1,4 @@
-package later;
+package gold.shortestpath.bfs01;
 
 import java.io.*;
 import java.util.*;
