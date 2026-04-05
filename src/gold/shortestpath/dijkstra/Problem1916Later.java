@@ -1,4 +1,4 @@
-package later;
+package gold.shortestpath.dijkstra;
 
 import java.io.*;
 import java.util.*;
