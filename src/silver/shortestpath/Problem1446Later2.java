@@ -1,4 +1,4 @@
-package later;
+package silver.shortestpath;
 
 import java.io.*;
 import java.util.*;
