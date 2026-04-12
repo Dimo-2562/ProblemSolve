@@ -1,4 +1,4 @@
-package gold.simulation;
+package gold.implementation.simulation;
 
 import java.io.*;
 import java.util.*;

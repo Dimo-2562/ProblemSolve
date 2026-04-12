@@ -1,4 +1,4 @@
-package silver.slidingwindow;
+package silver.twopointer.slidingwindow;
 
 import java.io.*;
 

@@ -1,4 +1,4 @@
-package silver.bfs;
+package silver.shortestpath.bfs;
 
 import java.io.*;
 import java.util.*;
