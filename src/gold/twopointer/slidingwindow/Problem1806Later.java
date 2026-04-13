@@ -1,4 +1,4 @@
-package later;
+package gold.twopointer.slidingwindow;
 
 import java.io.*;
 import java.util.*;
