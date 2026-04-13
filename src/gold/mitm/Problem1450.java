@@ -1,39 +1,33 @@
-package later;
+package gold.mitm;
 
 import java.io.*;
 import java.util.*;
 
 /*
-N개의 물건, 최대 C만큼의 무게
+N개의 물건, C만큼의 무게를 담을 수 있는 가방
 N개의 물건을 가방에 넣는 방법의 수를 구하라.
 
 <입력>
 N, C
 - N: 물건의 개수 (1 ~ 30)
-- C: 가방의 최대 무게 (0 ~ 10^9)
-물건의 무게
-- 무게의 범위 (1 ~ 10^9)
+- C: 가방이 버티는 무게 (1 ~ 10^9)
+물건들의 무게
 
 <출력>
-가방에 넣는 경우의 수
+가방에 넣는 방법의 수를 출력.
 
 <풀이>
-long형으로 sum
+백트래킹 -> 2^30 (x)
+DP -> 10^9 -> (x)
+MITM 적용
 
-접근 방식 몰라서 ai 활용
-완탐 -> 2^30은 시간 초과
-dp -> 10^9 배열은 불가능
-2^15로 두 개를 나눈다면? -> 가능, MITM
-
-1. 두 개로 분할
-2. 각각의 케이스를 list에 담기
-3. 하나는 고정한 채 하나를 이분탐색
-4. 개수 체크.
+1. 절반 나눠서 백트래킹
+2. 절반 중 하나만 이분탐색.
  */
 
-public class Problem1450Later {
+public class Problem1450 {
     static int n, c;
-    static int[] arr;
+    static int[] item;
     static List<Integer> leftList = new ArrayList<>();
     static List<Integer> rightList = new ArrayList<>();
 
@@ -43,44 +37,45 @@ public class Problem1450Later {
         StringTokenizer st = new StringTokenizer(br.readLine());
         n = Integer.parseInt(st.nextToken());
         c = Integer.parseInt(st.nextToken());
-
-        arr = new int[n];
+        item = new int[n];
 
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < n; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
+            item[i] = Integer.parseInt(st.nextToken());
         }
 
-        makeSums(0, n/2, 0, leftList);
-        makeSums(n/2, n, 0, rightList);
+        // 1. 백트래킹
+        backTracking(0, n / 2, 0, leftList);
+        backTracking(n / 2, n, 0, rightList);
 
         rightList.sort((o1, o2) -> Integer.compare(o1, o2));
 
+        // 2. 이분 탐색
         long sum = 0;
         for (int num : leftList) {
             int remain = c - num;
 
             if (remain < 0) continue;
 
-            sum += upperBound(remain, rightList);
+            sum += upperbound(remain, rightList);
         }
 
-        System.out.print(sum);
+        System.out.println(sum);
     }
 
-    public static void makeSums(int start, int end, int sum, List<Integer> list) {
+    static void backTracking(int depth, int end, int sum, List<Integer> list) {
         if (sum > c) return;
 
-        if (start == end) {
+        if (depth == end) {
             list.add(sum);
             return;
         }
 
-        makeSums(start+1, end, sum, list);
-        makeSums(start+1, end, sum + arr[start], list);
+        backTracking(depth + 1, end, sum, list);
+        backTracking(depth + 1, end, sum + item[depth], list);
     }
 
-    public static int upperBound(int target, List<Integer> list) {
+    static int upperbound(int target, List<Integer> list) {
         int lo = 0;
         int hi = list.size();
 
@@ -93,6 +88,7 @@ public class Problem1450Later {
                 lo = mid + 1;
             }
         }
+
         return lo;
     }
 }
