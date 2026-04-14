@@ -1,4 +1,4 @@
-package silver.lis;
+package silver.dp;
 
 import java.io.*;
 import java.util.*;
