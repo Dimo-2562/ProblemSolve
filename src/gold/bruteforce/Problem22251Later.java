@@ -1,4 +1,4 @@
-package later;
+package gold.bruteforce;
 
 import java.io.*;
 import java.util.*;
