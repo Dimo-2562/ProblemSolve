@@ -1,4 +1,4 @@
-package later;
+package gold.topologicalsort;
 
 import java.io.*;
 import java.util.*;
