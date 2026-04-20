@@ -1,6 +1,5 @@
-package silver.structure.priorityqueue;
+package lv3.structure.pq;
 
-import java.io.*;
 import java.util.*;
 
 /*

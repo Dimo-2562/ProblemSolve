@@ -1,4 +1,4 @@
-package silver.bruteforce;
+package lv3.bruteforce;
 
 /*
 네트워크 
@@ -18,7 +18,6 @@ computers
 bfs or dfs로 찾기.
 */
 
-import java.io.*;
 import java.util.*;
 
 class 네트워크 {

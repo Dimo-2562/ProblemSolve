@@ -1,4 +1,4 @@
-package silver.dp;
+package lv3.dp;
 
 /*
 꼭대기에서 바닥까지 이어지는 경로
