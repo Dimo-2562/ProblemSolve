@@ -1,4 +1,4 @@
-package later;
+package gold.structure.stack;
 
 import java.io.*;
 
