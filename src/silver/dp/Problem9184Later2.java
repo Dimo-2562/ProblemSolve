@@ -1,19 +1,16 @@
-package later;
+package silver.dp;
 
 import java.io.*;
 import java.util.*;
 
 /*
-a, b, c 셋 중 하나가 0 이하면 1
-a, b, c 셋 중 하나가 20 초과면 w(20,20,20)
 
-a < b < c면 w(a, b, c-1) + w(a, b-1, c-1) - w(a, b-1, c)
-else
-w(a-1, b, c) + w(a-1, b-1, c) + w(a-1, b, c-1) - w(a-1, b-1, c-1)
-
+<입력>
+a, b, c
+- -1 -1 -1이 입력되면 종료.
  */
 
-public class Problem9184Later {
+public class Problem9184Later2 {
     static int[][][] dp = new int[21][21][21];
 
     public static void main(String[] args) throws IOException {
@@ -22,16 +19,17 @@ public class Problem9184Later {
         StringBuilder sb = new StringBuilder();
         while (true) {
             StringTokenizer st = new StringTokenizer(br.readLine());
+
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
             int c = Integer.parseInt(st.nextToken());
 
             if (a == -1 && b == -1 && c == -1) break;
 
-            int answer = w(a, b, c);
+            int num = w(a, b, c);
 
             sb.append("w(").append(a).append(", ").append(b).append(", ").append(c)
-                    .append(") = ").append(answer).append('\n');
+                    .append(") = ").append(num).append('\n');
         }
 
         System.out.print(sb);
@@ -43,12 +41,11 @@ public class Problem9184Later {
 
         if (dp[a][b][c] != 0) return dp[a][b][c];
 
-        if (a < b && b < c) {
+        if (a < b && b < c)
             dp[a][b][c] = w(a, b, c - 1) + w(a, b - 1, c - 1) - w(a, b - 1, c);
-        } else {
-            dp[a][b][c] = w(a - 1, b, c) + w(a - 1, b - 1, c)
-                          + w(a - 1, b, c - 1) - w(a - 1, b - 1, c - 1);
-        }
+        else
+            dp[a][b][c] = w(a - 1, b, c) + w(a - 1, b - 1, c) + w(a - 1, b, c - 1) - w(a - 1, b - 1, c - 1);
+
         return dp[a][b][c];
     }
 }
