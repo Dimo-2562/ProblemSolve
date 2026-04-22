@@ -1,6 +1,5 @@
-package lv3.shortestpath;
+package lv3.shortestpath.bfs;
 
-import java.io.*;
 import java.util.*;
 
 /*
