@@ -1,4 +1,4 @@
-package lv3.bruteforce;
+package lv3.dfs;
 
 /*
 네트워크 
