@@ -1,7 +1,4 @@
-package later;
-
-import java.io.*;
-import java.util.*;
+package lv3.math;
 
 /*
 자연수 n개로 이루어진 중복 허용 집합(multiset) 중 두 조건을 만족하면 최고의 집합
