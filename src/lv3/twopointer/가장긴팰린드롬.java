@@ -1,6 +1,4 @@
-package later;
-
-import java.util.*;
+package lv3.twopointer;
 
 /*
 앞뒤를 뒤집어도 똑같은 문자열을 팰린드롬이라고 한다.
@@ -19,7 +17,7 @@ for문 돌면서 하나 기준점 잡고 투포인터로 체크하기?
 10^6
 */
 
-class 가장긴팰린드롬Later {
+class 가장긴팰린드롬 {
     public int solution(String s) {
         int answer = 1;
 
