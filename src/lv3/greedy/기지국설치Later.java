@@ -1,7 +1,4 @@
-package later;
-
-import java.io.*;
-import java.util.*;
+package lv3.greedy;
 
 /*
 N개의 아파트
