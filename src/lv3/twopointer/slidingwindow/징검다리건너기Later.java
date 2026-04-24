@@ -1,6 +1,5 @@
-package later;
+package lv3.twopointer.slidingwindow;
 
-import java.io.*;
 import java.util.*;
 
 /*
