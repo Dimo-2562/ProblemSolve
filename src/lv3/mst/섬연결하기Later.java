@@ -1,7 +1,6 @@
-package later;
+package lv3.mst;
 
 import java.util.*;
-import java.io.*;
 
 /*
 n개의 섬 사이에 다리를 건설하는 비용이 주어질 때,
