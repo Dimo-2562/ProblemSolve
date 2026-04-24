@@ -1,7 +1,4 @@
-package later;
-
-import java.io.*;
-import java.util.*;
+package lv3.dp.kadane;
 
 /*
 연속 부분 서열에 같은 길이의 펄스 수열을 각 원소끼리 곱하여 연속 펄스 부분 수열을 만들려고 함.
