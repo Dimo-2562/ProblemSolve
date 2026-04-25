@@ -1,6 +1,4 @@
-package later;
-
-import java.util.*;
+package lv3.prefix;
 
 /*
 N * M 행렬
