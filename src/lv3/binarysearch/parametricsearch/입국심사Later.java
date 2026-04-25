@@ -1,7 +1,4 @@
-package later;
-
-import java.io.*;
-import java.util.*;
+package lv3.binarysearch.parametricsearch;
 
 /*
 n명이 입국심사를 위해 줄을 서서 기다리고 있음.
