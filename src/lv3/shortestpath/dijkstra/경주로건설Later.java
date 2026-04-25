@@ -1,6 +1,5 @@
-package later;
+package lv3.shortestpath.dijkstra;
 
-import java.io.*;
 import java.util.*;
 
 /*
