@@ -49,7 +49,7 @@ u
 -> 그리디.
 */
 
-class Solution {
+class 미로탈출명령어Later {
     static char[] dirChar = {'d', 'l', 'r', 'u'};
     static int[] dy = {1, 0, 0, -1};
     static int[] dx = {0, -1, 1, 0};
