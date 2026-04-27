@@ -1,6 +1,4 @@
-package later;
-
-import java.util.*;
+package lv2.twopointer;
 
 /*
 연속된 자연수들로 n을 표현하는 방법의 수를 return 하라
