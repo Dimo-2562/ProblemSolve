@@ -1,6 +1,4 @@
-package later;
-
-import java.util.*;
+package lv2.string;
 
 /*
 첫 문자가 대문자
