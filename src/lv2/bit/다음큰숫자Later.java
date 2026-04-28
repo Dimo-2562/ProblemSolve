@@ -1,6 +1,4 @@
-package later;
-
-import java.util.*;
+package lv2.bit;
 
 /*
 자연수 n, n의 다음 큰 숫자는 아래와 같이 정의
