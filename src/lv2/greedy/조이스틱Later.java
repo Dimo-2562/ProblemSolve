@@ -1,6 +1,4 @@
-package later;
-
-import java.util.*;
+package lv2.greedy;
 
 /*
 
