@@ -1,6 +1,4 @@
-package later;
-
-import java.util.*;
+package lv2.math;
 
 /*
 0이 적힌 블록들이 설치된 도로에 다른 숫자가 적힌 블록들을 설치하려고 한다.
@@ -27,7 +25,7 @@ sqrt
 
 */
 
-class Solution {
+class 숫자블록Later {
     final int LIMIT = 10_000_000;
 
     public int[] solution(long begin, long end) {
