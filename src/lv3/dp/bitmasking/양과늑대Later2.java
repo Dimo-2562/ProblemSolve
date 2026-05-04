@@ -1,4 +1,4 @@
-package later;
+package lv3.dp.bitmasking;
 
 import java.util.*;
 
