@@ -1,6 +1,4 @@
-package later;
-
-import java.util.*;
+package lv3.math;
 
 /*
 하 어렵다...
