@@ -1,6 +1,4 @@
-package later;
-
-import java.util.*;
+package lv2.dfs.backtracking;
 
 /*
 어피치가 n발을 다 쏜 후 라이언이 n발을 쏜다.
